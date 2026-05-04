@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IMPÉRO • Tailored for Legacy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#F8F4ED] overflow-x-hidden">
+
+  <!-- NAVIGATION -->
+  <nav class="fixed top-0 w-full bg-[#F8F4ED]/95 backdrop-blur-lg z-50 border-b border-[#C6A76A]/10">
+    <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+      <h1 onclick="navigateTo('home')" class="heading text-3xl tracking-widest cursor-pointer">IMPÉRO</h1>
+      <div class="hidden md:flex gap-8 text-sm tracking-widest">
+        <a onclick="navigateTo('home')" class="hover:text-[#C6A76A] cursor-pointer">HOME</a>
+        <a onclick="navigateTo('collection')" class="hover:text-[#C6A76A] cursor-pointer">COLLECTION</a>
+        <a onclick="navigateTo('newarrivals')" class="hover:text-[#C6A76A] cursor-pointer">NEW ARRIVALS</a>
+        <a onclick="navigateTo('bespoke')" class="hover:text-[#C6A76A] cursor-pointer">BESPOKE</a>
+        <a onclick="navigateTo('about')" class="hover:text-[#C6A76A] cursor-pointer">ABOUT</a>
+      </div>
+      <div class="flex gap-6">
+        <i onclick="toggleCart()" class="fa-solid fa-bag-shopping text-xl cursor-pointer hover:text-[#C6A76A]"></i>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HOME / HERO -->
+  <section id="home" class="min-h-screen flex items-center relative">
+    <div class="absolute inset-0 bg-[radial-gradient(#C6A76A_0.8px,transparent_1px)] [background-size:50px_50px] opacity-20"></div>
+    <div class="max-w-5xl mx-auto px-6 text-center z-10">
+      <h1 class="heading text-6xl md:text-8xl leading-tight text-[#5C3A21]">TAILORED FOR</h1>
+      <h1 class="heading text-7xl md:text-[110px] leading-none text-[#C6A76A] tracking-widest">LEGACY</h1>
+      <p class="mt-8 text-xl text-gray-700 max-w-md mx-auto">Where timeless craftsmanship meets modern royalty.</p>
+      <button onclick="navigateTo('collection')" 
+        class="mt-12 px-16 py-6 border-2 border-[#C6A76A] text-[#C6A76A] hover:bg-[#C6A76A] hover:text-black text-lg tracking-widest transition-all">
+        EXPLORE COLLECTION
+      </button>
+    </div>
+  </section>
+
+  <!-- COLLECTION -->
+  <section id="collection" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="heading text-5xl text-center mb-12">Our Collection</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" id="productGrid"></div>
+    </div>
+  </section>
+
+  <!-- NEW ARRIVALS -->
+  <section id="newarrivals" class="py-20 bg-[#F8F4ED]">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="heading text-5xl mb-12">New Arrivals</h2>
+      <p class="text-xl text-gray-600">Freshly crafted pieces for the new season.</p>
+    </div>
+  </section>
+
+  <!-- BESPOKE -->
+  <section id="bespoke" class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="heading text-5xl mb-8">Bespoke Tailoring</h2>
+      <p class="text-lg text-gray-600">Create your own legacy. Custom designs made exclusively for you.</p>
+      <button class="mt-10 px-12 py-6 bg-black text-white text-lg">BOOK CONSULTATION</button>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-20 bg-[#F8F4ED]">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="heading text-5xl mb-8">Our Story</h2>
+      <p class="text-lg leading-relaxed text-gray-700">
+        Impéro was born from a desire to preserve the art of traditional craftsmanship while embracing contemporary elegance. 
+        Every garment tells a story of legacy, power, and timeless beauty.
+      </p>
+    </div>
+  </section>
+
+  <!-- PRODUCT MODAL -->
+  <div id="productModal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-[100] p-4">
+    <div class="bg-white max-w-4xl w-full rounded-3xl overflow-hidden" id="modalContent"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
