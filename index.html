@@ -12,76 +12,66 @@
 </head>
 <body class="bg-[#F8F4ED] overflow-x-hidden">
 
-  <!-- NAVIGATION -->
-  <nav class="fixed top-0 w-full bg-[#F8F4ED]/95 backdrop-blur-lg z-50 border-b border-[#C6A76A]/10">
+  <!-- NAV -->
+  <nav class="fixed top-0 w-full bg-[#F8F4ED]/80 backdrop-blur-xl z-50 border-b border-[#C6A76A]/10">
     <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
-      <h1 onclick="navigateTo('home')" class="heading text-3xl tracking-widest cursor-pointer">IMPÉRO</h1>
+      <h1 onclick="navigateTo('home')" class="heading text-3xl tracking-widest cursor-pointer text-[#5C3A21]">IMPÉRO</h1>
       <div class="hidden md:flex gap-8 text-sm tracking-widest">
         <a onclick="navigateTo('home')" class="hover:text-[#C6A76A] cursor-pointer">HOME</a>
         <a onclick="navigateTo('collection')" class="hover:text-[#C6A76A] cursor-pointer">COLLECTION</a>
         <a onclick="navigateTo('newarrivals')" class="hover:text-[#C6A76A] cursor-pointer">NEW ARRIVALS</a>
         <a onclick="navigateTo('bespoke')" class="hover:text-[#C6A76A] cursor-pointer">BESPOKE</a>
-        <a onclick="navigateTo('about')" class="hover:text-[#C6A76A] cursor-pointer">ABOUT</a>
       </div>
-      <div class="flex gap-6">
-        <i onclick="toggleCart()" class="fa-solid fa-bag-shopping text-xl cursor-pointer hover:text-[#C6A76A]"></i>
-      </div>
+      <i onclick="toggleCart()" class="fa-solid fa-bag-shopping text-2xl cursor-pointer hover:text-[#C6A76A]"></i>
     </div>
   </nav>
 
-  <!-- HOME / HERO -->
-  <section id="home" class="min-h-screen flex items-center relative">
-    <div class="absolute inset-0 bg-[radial-gradient(#C6A76A_0.8px,transparent_1px)] [background-size:50px_50px] opacity-20"></div>
-    <div class="max-w-5xl mx-auto px-6 text-center z-10">
-      <h1 class="heading text-6xl md:text-8xl leading-tight text-[#5C3A21]">TAILORED FOR</h1>
-      <h1 class="heading text-7xl md:text-[110px] leading-none text-[#C6A76A] tracking-widest">LEGACY</h1>
-      <p class="mt-8 text-xl text-gray-700 max-w-md mx-auto">Where timeless craftsmanship meets modern royalty.</p>
+  <!-- HOME PAGE -->
+  <section id="home" class="min-h-screen relative flex items-center">
+    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1610030469984-7c2c3e8f0b0a?w=2000')] bg-cover bg-center"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/60"></div>
+    
+    <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+      <h1 id="mainTitle" class="heading text-6xl md:text-8xl text-white tracking-widest">TAILORED FOR</h1>
+      <h1 id="legacy" class="heading text-7xl md:text-[120px] leading-none text-[#C6A76A] tracking-widest">LEGACY</h1>
+      <p class="mt-6 text-white/90 text-xl max-w-lg mx-auto">Exquisite craftsmanship. Timeless elegance. Royal heritage.</p>
       <button onclick="navigateTo('collection')" 
-        class="mt-12 px-16 py-6 border-2 border-[#C6A76A] text-[#C6A76A] hover:bg-[#C6A76A] hover:text-black text-lg tracking-widest transition-all">
-        EXPLORE COLLECTION
+        class="mt-12 px-16 py-7 border-2 border-white text-white hover:bg-white hover:text-black text-lg tracking-widest transition-all">
+        DISCOVER COLLECTION
       </button>
     </div>
   </section>
 
-  <!-- COLLECTION -->
-  <section id="collection" class="py-20 bg-white">
+  <!-- COLLECTION PAGE -->
+  <section id="collection" class="py-20 bg-[#F8F4ED]">
     <div class="max-w-7xl mx-auto px-6">
-      <h2 class="heading text-5xl text-center mb-12">Our Collection</h2>
+      <h2 class="heading text-5xl text-center mb-4 text-[#5C3A21]">Our Collections</h2>
+      <p class="text-center text-gray-600 mb-12">Handcrafted for those who value legacy</p>
+      
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" id="productGrid"></div>
     </div>
   </section>
 
   <!-- NEW ARRIVALS -->
-  <section id="newarrivals" class="py-20 bg-[#F8F4ED]">
+  <section id="newarrivals" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6 text-center">
       <h2 class="heading text-5xl mb-12">New Arrivals</h2>
-      <p class="text-xl text-gray-600">Freshly crafted pieces for the new season.</p>
+      <p class="text-gray-600">Freshly tailored masterpieces for the modern royal.</p>
     </div>
   </section>
 
   <!-- BESPOKE -->
-  <section id="bespoke" class="py-20 bg-white">
+  <section id="bespoke" class="py-20 bg-[#F8F4ED]">
     <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="heading text-5xl mb-8">Bespoke Tailoring</h2>
-      <p class="text-lg text-gray-600">Create your own legacy. Custom designs made exclusively for you.</p>
-      <button class="mt-10 px-12 py-6 bg-black text-white text-lg">BOOK CONSULTATION</button>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="py-20 bg-[#F8F4ED]">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="heading text-5xl mb-8">Our Story</h2>
-      <p class="text-lg leading-relaxed text-gray-700">
-        Impéro was born from a desire to preserve the art of traditional craftsmanship while embracing contemporary elegance. 
-        Every garment tells a story of legacy, power, and timeless beauty.
-      </p>
+      <h2 class="heading text-5xl mb-8">Bespoke Experience</h2>
+      <p class="text-lg text-gray-700">Your vision. Our craftsmanship. One exclusive piece.</p>
+      <button class="mt-10 px-12 py-6 bg-[#5C3A21] text-white text-lg tracking-widest hover:bg-[#C6A76A] hover:text-black">BOOK YOUR CONSULTATION</button>
     </div>
   </section>
 
   <!-- PRODUCT MODAL -->
   <div id="productModal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-[100] p-4">
-    <div class="bg-white max-w-4xl w-full rounded-3xl overflow-hidden" id="modalContent"></div>
+    <div class="bg-white/95 backdrop-blur-xl max-w-4xl w-full rounded-3xl overflow-hidden" id="modalContent"></div>
   </div>
 
   <script src="script.js"></script>
